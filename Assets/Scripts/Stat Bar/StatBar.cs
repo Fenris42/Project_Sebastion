@@ -8,9 +8,11 @@ using UnityEngine.UI;
 public class StatBar : MonoBehaviour
 {
     //public variables
-    public Slider slider;
     public int value;
     public int max;
+
+    //private variables
+    [SerializeField] private Slider slider;
 
     // Start is called before the first frame update
     void Start()

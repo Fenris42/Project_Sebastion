@@ -2,8 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : BC_Character
+public class Player_Movement : MonoBehaviour
 {
+    //public variables
+    public Animator animator;
+
+    //private variables
+    [SerializeField] private int moveSpeed;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +37,7 @@ public class PlayerMovement : BC_Character
         //move up
         else if (Input.GetKey(KeyCode.W))
         {
-            transform.position = transform.position + ((Vector3.up * MoveSpeed) * Time.deltaTime);
+            transform.position = transform.position + ((Vector3.up * moveSpeed) * Time.deltaTime);
 
             //play animation
             animator.SetBool("Running", true);
@@ -36,7 +45,7 @@ public class PlayerMovement : BC_Character
         //move down
         else if (Input.GetKey(KeyCode.S))
         {
-            transform.position = transform.position + ((Vector3.down * MoveSpeed) * Time.deltaTime);
+            transform.position = transform.position + ((Vector3.down * moveSpeed) * Time.deltaTime);
 
             //play animation
             animator.SetBool("Running", true);
