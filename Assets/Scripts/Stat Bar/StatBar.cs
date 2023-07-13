@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,45 +7,93 @@ using UnityEngine.UI;
 public class StatBar : MonoBehaviour
 {
     //public variables
-    public int value;
-    public int max;
 
     //private variables
-    [SerializeField] private Slider slider;
+    [SerializeField] private Slider fillSlider;
+    [SerializeField] private Slider changeSlider;
+    [SerializeField] private int current;
+    [SerializeField] private int max;
 
-    // Start is called before the first frame update
+
+
     void Start()
-    {
+    {// Start is called before the first frame update
+
+    }
+
+    void Update()
+    {// Update is called once per frame
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetCurrent(int amount)
     {
-        Sanitize();
-        UpdateBar();
+        current = amount;
     }
 
-    //ensure values stay in range
+    public void SetMax(int amount)
+    {
+        max = amount;
+    }
+
     private void Sanitize()
-    {
-        if (value < 0)
+    {//ensure values stay in range
+
+        if (current < 0)
         {
-            value = 0;
+            current = 0;
         }
-        if (value > max)
+        if (current > max)
         {
-            value = max;
+            current = max;
         }
     }
 
-    //set slider to percentage of current and max values
-    private void UpdateBar()
-    {
+    private void UpdateFillBar()
+    {//set slider to percentage of current and max values
+
         //get bar fill ratio
-        float percentage = (float)value / (float)max;
+        float percentage = (float)current / (float)max;
 
         //scale health bar fill
-        slider.value = percentage;
+        fillSlider.value = percentage;
+
     }
+
+    private void UpdateChangeBar()
+    {//set slider to percentage of current and max values
+
+        //get bar fill ratio
+        float percentage = (float)current / (float)max;
+
+        //scale health bar fill
+        changeSlider.value = percentage;
+
+    }
+
+    public void Add(int amount)
+    {//increase stat bar and play animation
+
+        current += amount;
+        Sanitize();
+
+        UpdateChangeBar();
+
+        //delay updating the fill bar for 1 sec
+        Invoke("UpdateFillBar", 1);
+
+    }
+
+    public void Remove(int amount)
+    {//reduce stat bar and play animation
+
+        current -= amount;
+        Sanitize();
+
+        UpdateFillBar();
+
+        //delay updating the change bar for 1 sec
+        Invoke("UpdateChangeBar", 1);
+    }
+
 }

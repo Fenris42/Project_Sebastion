@@ -8,6 +8,8 @@ public class Mob_Attack : MonoBehaviour
 
     //private variables
     [SerializeField] private Animator animator;
+    [SerializeField] private GameObject WallHealthBarObject;
+    private StatBar wallHealthBar;
     private Mob_Movement mob_movement;
     private float timer = 0;
 
@@ -22,6 +24,9 @@ public class Mob_Attack : MonoBehaviour
     {
         //get mobs movement script
         mob_movement = GetComponent<Mob_Movement>();
+
+        //get wall health bar script
+        wallHealthBar = WallHealthBarObject.GetComponent<StatBar>();
     }
 
     // Update is called once per frame
@@ -38,7 +43,13 @@ public class Mob_Attack : MonoBehaviour
             //convert ticks to seconds
             if (timer >= attackSpeed)
             {
+                //play animation
                 animator.SetTrigger("Attack");
+
+                
+
+                //apply damage to wall
+                wallHealthBar.Remove(attackDamage);
 
                 //reset timer
                 timer = 0;

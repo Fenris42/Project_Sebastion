@@ -9,86 +9,67 @@ public class Mob_Health : MonoBehaviour
     //private variables
     [SerializeField] private Animator animator;
     [SerializeField] private GameObject healthBarObject;
-    private StatBar statbar;
+    private StatBar healthBar;
 
     //stats
-    [SerializeField] private int health;
+    [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth;
 
 
-    // Start is called before the first frame update
+    
     void Start()
-    {
-        //import statbar script from health bar
-        statbar = healthBarObject.GetComponent<StatBar>();
+    {// Start is called before the first frame update
 
-        //set health bar max amount
-        statbar.max = maxHealth;
+        //import healthbars script and initialize stats
+        healthBar = healthBarObject.GetComponent<StatBar>();
+        healthBar.SetCurrent(maxHealth);
+        healthBar.SetMax(maxHealth);
+
     }
 
-    // Update is called once per frame
+    
     void Update()
-    {
-        //call health bar meter to update
-        UpdateHealthBar();
+    {// Update is called once per frame
+
+
+    }
+
+    public void Heal(int healing)
+    {//apply healing to mob
+
+
 
     }
 
     public void Damage(int damage)
-    {
-        //apply damage
-        health -= damage;
+    {//apply damage to mob
 
-        //keep values in range
-        Sanitize();
 
-        //check if dead
-        if (health <= 0)
-        {
-            Die();
-        }
-        else
-        {
-            PlayHurtAnimation();
-        }
-    }
-
-    public void Heal(int healing)
-    {
-        //apply healing
-        health += healing;
-
-        //keep values in range
-        Sanitize();
-
+        //play hurt animation
+        animator.SetTrigger("Hurt");
     }
 
     private void Die()
-    {
+    {//
 
     }
 
     private void UpdateHealthBar()
-    {
-        //update health bar
-        statbar.value = health;
+    {//update mobs health bar
+
+
     }
 
     private void Sanitize()
-    {
-        if (health < 0)
-        {
-            health = 0;
-        }
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-    }
+    {//keep values in range
 
-    private void PlayHurtAnimation()
-    {
-        //play hurt animation
-        animator.SetTrigger("Hurt");
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
     }
 }
