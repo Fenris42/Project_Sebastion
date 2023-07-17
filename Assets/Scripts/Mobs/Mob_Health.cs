@@ -5,13 +5,17 @@ using UnityEngine;
 public class Mob_Health : MonoBehaviour
 {
     //public varaibles
+    public bool alive = true;
 
     //private variables
     [SerializeField] private Animator animator;
+    [SerializeField] private Collider2D boxCollider;
     [SerializeField] private GameObject healthBarObject;
     private StatBar healthBar;
+    private Mob_Movement mobMovement;
 
     //stats
+    [SerializeField] private int despawnTime;
     [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth;
 
@@ -25,6 +29,8 @@ public class Mob_Health : MonoBehaviour
         healthBar.SetCurrent(maxHealth);
         healthBar.SetMax(maxHealth);
 
+        //import mob movement script
+        mobMovement = GetComponent<Mob_Movement>();
     }
 
     
@@ -44,20 +50,60 @@ public class Mob_Health : MonoBehaviour
     public void Damage(int damage)
     {//apply damage to mob
 
+        currentHealth -= damage;
+        Sanitize();
 
-        //play hurt animation
-        animator.SetTrigger("Hurt");
+        healthBar.Remove(damage);
+
+        if (currentHealth > 0)
+        {
+            //play hurt animation
+            animator.SetTrigger("Hurt");
+        }
+        else if (currentHealth <= 0)
+        {
+            Die();
+        }
+        
     }
 
     private void Die()
-    {//
+    {//mob has been killed
+
+        //mob has died. stop movement and attack
+        alive = false;
+
+        //play animation
+        animator.SetBool("Die", true);
+
+        //disable mobs health bar
+        healthBarObject.SetActive(false);
+
+        //disable mobs hit box
+        boxCollider.enabled = false;
+
+        /*
+        //spawn loot ------------
+        //spawn position
+        float xCoord = (float)(transform.position.x + 0);
+        float yCoord = (float)(transform.position.y - 0);
+
+        //set loot
+        lootPrefab.InventoryItem = loot;
+        lootPrefab.Quantity = 1;
+
+        //spawn loot
+        Instantiate(lootPrefab, new Vector3(xCoord, yCoord), transform.rotation);
+        */
+
+        //delete mob after 1 sec
+        Invoke("DeleteMob", despawnTime);
 
     }
 
-    private void UpdateHealthBar()
-    {//update mobs health bar
-
-
+    private void DeleteMob()
+    {//destroy mobs game object 
+        Destroy(gameObject);
     }
 
     private void Sanitize()

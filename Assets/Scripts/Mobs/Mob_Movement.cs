@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Mob_Movement : MonoBehaviour
 {
     //public variables
     public bool inAttackRange = false;
+    
 
     //private variables
     [SerializeField] private Animator animator;
     private bool inMeleeAttackRange = false;
     private bool inRangedAttackRange = false;
+    private Mob_Health mobHealth;
 
     //stats
     [SerializeField] private int moveSpeed;
@@ -22,7 +25,7 @@ public class Mob_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        mobHealth = GetComponent<Mob_Health>();
 
     }
 
@@ -32,8 +35,12 @@ public class Mob_Movement : MonoBehaviour
         //check if in attack range
         RangeCheck();
 
-        //move forward
-        Movement();
+        if (mobHealth.alive == true)
+        {//move forward
+            Movement();
+
+        }
+        
 
     }
 

@@ -11,8 +11,8 @@ public class StatBar : MonoBehaviour
     //private variables
     [SerializeField] private Slider fillSlider;
     [SerializeField] private Slider changeSlider;
-    [SerializeField] private int current;
-    [SerializeField] private int max;
+    private int current;
+    private int max;
 
 
 

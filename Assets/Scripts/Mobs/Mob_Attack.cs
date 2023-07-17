@@ -8,10 +8,10 @@ public class Mob_Attack : MonoBehaviour
 
     //private variables
     [SerializeField] private Animator animator;
-    [SerializeField] private GameObject WallHealthBarObject;
-    private StatBar wallHealthBar;
-    private Mob_Movement mob_movement;
+    [SerializeField] private Wall_Health wallHealth;
+    private Mob_Movement mobMovement;
     private float timer = 0;
+    private Mob_Health mobHealth;
 
     //stats
     [SerializeField] private int attackDamage;
@@ -23,10 +23,13 @@ public class Mob_Attack : MonoBehaviour
     void Start()
     {
         //get mobs movement script
-        mob_movement = GetComponent<Mob_Movement>();
+        mobMovement = GetComponent<Mob_Movement>();
 
-        //get wall health bar script
-        wallHealthBar = WallHealthBarObject.GetComponent<StatBar>();
+        //get mobs health script
+        mobHealth = GetComponent<Mob_Health>();
+
+        //get wall health script
+        wallHealth = GameObject.Find("Game Logic").GetComponent<Wall_Health>();
     }
 
     // Update is called once per frame
@@ -38,7 +41,7 @@ public class Mob_Attack : MonoBehaviour
 
     private void Attack()
     {
-        if (mob_movement.inAttackRange == true) 
+        if (mobMovement.inAttackRange == true && mobHealth.alive == true) 
         {
             //convert ticks to seconds
             if (timer >= attackSpeed)
@@ -46,10 +49,9 @@ public class Mob_Attack : MonoBehaviour
                 //play animation
                 animator.SetTrigger("Attack");
 
-                
-
-                //apply damage to wall
-                wallHealthBar.Remove(attackDamage);
+                //delay damage to sync with animation
+                float delay = 0.5f;
+                Invoke("DamageWall", delay);
 
                 //reset timer
                 timer = 0;
@@ -60,5 +62,11 @@ public class Mob_Attack : MonoBehaviour
                 timer += Time.deltaTime;
             }
         }
+    }
+
+    private void DamageWall()
+    {
+        //apply damage to wall
+        wallHealth.Damage(attackDamage);
     }
 }
