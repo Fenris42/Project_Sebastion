@@ -5,9 +5,10 @@ using UnityEngine;
 public class Player_Movement : MonoBehaviour
 {
     //public variables
-    public Animator animator;
+
 
     //private variables
+    [SerializeField] private Animator animator;
     [SerializeField] private int moveSpeed;
 
 

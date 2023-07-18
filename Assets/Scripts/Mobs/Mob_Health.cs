@@ -11,7 +11,7 @@ public class Mob_Health : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private Collider2D boxCollider;
     [SerializeField] private GameObject healthBarObject;
-    private StatBar healthBar;
+    private Stat_Bar healthBar;
     private Mob_Movement mobMovement;
 
     //stats
@@ -25,7 +25,7 @@ public class Mob_Health : MonoBehaviour
     {// Start is called before the first frame update
 
         //import healthbars script and initialize stats
-        healthBar = healthBarObject.GetComponent<StatBar>();
+        healthBar = healthBarObject.GetComponent<Stat_Bar>();
         healthBar.SetCurrent(maxHealth);
         healthBar.SetMax(maxHealth);
 
@@ -82,25 +82,28 @@ public class Mob_Health : MonoBehaviour
         //disable mobs hit box
         boxCollider.enabled = false;
 
-        /*
-        //spawn loot ------------
-        //spawn position
-        float xCoord = (float)(transform.position.x + 0);
-        float yCoord = (float)(transform.position.y - 0);
-
-        //set loot
-        lootPrefab.InventoryItem = loot;
-        lootPrefab.Quantity = 1;
-
-        //spawn loot
-        Instantiate(lootPrefab, new Vector3(xCoord, yCoord), transform.rotation);
-        */
+        //Spawn loot item
+        DropLoot();
 
         //delete mob after 1 sec
         Invoke("DeleteMob", despawnTime);
 
     }
 
+    private void DropLoot()
+    {//spawn loot
+        /*
+        //set loot
+
+        //spawn position
+        float xCoord = (float)(transform.position.x + 0);
+        float yCoord = (float)(transform.position.y + 0);
+        float zCoord = transform.rotation;
+
+        //spawn loot
+        Instantiate(lootPrefab, new Vector3(xCoord, yCoord), zCoord);
+        */
+    }
     private void DeleteMob()
     {//destroy mobs game object 
         Destroy(gameObject);

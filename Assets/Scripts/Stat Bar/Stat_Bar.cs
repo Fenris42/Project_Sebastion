@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class StatBar : MonoBehaviour
+public class Stat_Bar : MonoBehaviour
 {
     //public variables
 
@@ -27,12 +27,12 @@ public class StatBar : MonoBehaviour
     }
 
     public void SetCurrent(int amount)
-    {
+    {//initialize bars current value
         current = amount;
     }
 
     public void SetMax(int amount)
-    {
+    {//initialize bars max value
         max = amount;
     }
 
@@ -74,12 +74,16 @@ public class StatBar : MonoBehaviour
     public void Add(int amount)
     {//increase stat bar and play animation
 
+        //add amount from bar
         current += amount;
+
+        //keep values in range
         Sanitize();
 
+        //apply updates to secondary bar
         UpdateChangeBar();
 
-        //delay updating the fill bar for 1 sec
+        //delay updating the main bar for 1 sec
         Invoke("UpdateFillBar", 1);
 
     }
@@ -87,12 +91,16 @@ public class StatBar : MonoBehaviour
     public void Remove(int amount)
     {//reduce stat bar and play animation
 
+        //remove amount from bar
         current -= amount;
+
+        //keep values in range
         Sanitize();
 
+        //apply updates to main bar
         UpdateFillBar();
 
-        //delay updating the change bar for 1 sec
+        //delay updating the secondary bar for 1 sec
         Invoke("UpdateChangeBar", 1);
     }
 

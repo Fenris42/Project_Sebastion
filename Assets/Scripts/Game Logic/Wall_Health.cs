@@ -8,7 +8,7 @@ public class Wall_Health : MonoBehaviour
 
     //private variables
     [SerializeField] private GameObject healthBarObject;
-    private StatBar healthBar;
+    private Stat_Bar healthBar;
 
     //stats
     [SerializeField] private int currentHealth;
@@ -18,7 +18,7 @@ public class Wall_Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthBar = healthBarObject.GetComponent<StatBar>();
+        healthBar = healthBarObject.GetComponent<Stat_Bar>();
         healthBar.SetCurrent(maxHealth);
         healthBar.SetMax(maxHealth);
     }
