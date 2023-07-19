@@ -7,7 +7,9 @@ public class Mob_Movement : MonoBehaviour
 {
     //public variables
     public bool inAttackRange = false;
-    
+    public bool isMelee;
+    public bool isRanged;
+
 
     //private variables
     [SerializeField] private Animator animator;
@@ -17,8 +19,7 @@ public class Mob_Movement : MonoBehaviour
 
     //stats
     [SerializeField] private int moveSpeed;
-    [SerializeField] private bool isMelee;
-    [SerializeField] private bool isRanged;
+    
 
 
 

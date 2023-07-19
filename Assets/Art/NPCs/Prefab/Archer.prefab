@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4000010464396976}
   - component: {fileID: 95000013227593822}
   m_Layer: 0
-  m_Name: Peasant
+  m_Name: Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

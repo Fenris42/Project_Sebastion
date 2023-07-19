@@ -648,7 +648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c7c3298f3e41c44960df61b9d81486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob_knight: {fileID: 7647192234719378318, guid: cd063028459edea4ca6fcc076c51c48f, type: 3}
 --- !u!1 &306534815
 GameObject:
   m_ObjectHideFlags: 0
@@ -909,11 +908,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelNumber: {fileID: 526947757}
+  secsBetweenWaves: 5
   Lane1_Spawner: {fileID: 2142062202}
   Lane2_Spawner: {fileID: 1151527727}
   Lane3_Spawner: {fileID: 279348223}
   Lane4_Spawner: {fileID: 526647183}
   Lane5_Spawner: {fileID: 921483517}
+  mob_knight: {fileID: 7647192234719378318, guid: cd063028459edea4ca6fcc076c51c48f, type: 3}
+  mob_archer: {fileID: 7647192234719378318, guid: d86a31e5bc024054da3bb552eef4ef8b, type: 3}
 --- !u!1 &523900071
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,6 +945,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 165396321}
+  - {fileID: 868217860}
   - {fileID: 776934510}
   m_Father: {fileID: 351471134}
   m_RootOrder: -1
@@ -991,7 +994,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c7c3298f3e41c44960df61b9d81486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob_knight: {fileID: 7647192234719378318, guid: cd063028459edea4ca6fcc076c51c48f, type: 3}
 --- !u!1 &526947755
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,6 +1495,83 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.893259, y: 0.23730326}
   m_EdgeRadius: 0
+--- !u!1 &868217859
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 868217860}
+  - component: {fileID: 868217861}
+  m_Layer: 0
+  m_Name: Wall Right
+  m_TagString: Wall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &868217860
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868217859}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.95, y: -0.07000005, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 523900072}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &868217861
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868217859}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -8.40505, y: 0.08361244}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.107302666, y: 10.011541}
+  m_EdgeRadius: 0
 --- !u!1 &883743848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1613,7 +1692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c7c3298f3e41c44960df61b9d81486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob_knight: {fileID: 7647192234719378318, guid: cd063028459edea4ca6fcc076c51c48f, type: 3}
 --- !u!1 &957989701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,7 +1870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061313171}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.89, y: -0.07, z: 0}
+  m_LocalPosition: {x: 8.92, y: -0.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2000,7 +2078,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c7c3298f3e41c44960df61b9d81486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob_knight: {fileID: 7647192234719378318, guid: cd063028459edea4ca6fcc076c51c48f, type: 3}
 --- !u!1 &1207455280
 GameObject:
   m_ObjectHideFlags: 0
@@ -3191,4 +3268,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c7c3298f3e41c44960df61b9d81486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mob_knight: {fileID: 7647192234719378318, guid: cd063028459edea4ca6fcc076c51c48f, type: 3}

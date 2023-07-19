@@ -11,6 +11,12 @@ public class Level_Manager : MonoBehaviour
 
     //private variables
     [SerializeField] private TMP_Text levelNumber;
+    [SerializeField] private int secsBetweenWaves;
+    private float timer;
+    private int wave;
+    private int level;
+    
+    //Spawners
     [SerializeField] private GameObject Lane1_Spawner;
     [SerializeField] private GameObject Lane2_Spawner;
     [SerializeField] private GameObject Lane3_Spawner;
@@ -22,10 +28,10 @@ public class Level_Manager : MonoBehaviour
     private Spawner Lane4;
     private Spawner Lane5;
 
-    private float timer;
-    private int wave;
-    private int level;
-
+    //mobs
+    [SerializeField] private GameObject mob_knight;
+    [SerializeField] private GameObject mob_archer;
+    
 
 
     // Start is called before the first frame update
@@ -53,8 +59,8 @@ public class Level_Manager : MonoBehaviour
         //increment timer
         timer += Time.deltaTime;
 
-
-        if (timer >= 5)
+        //wave delay has elapsed. spawn next wave
+        if (timer >= secsBetweenWaves)
         {
             //reset timer
             timer = 0;
@@ -62,12 +68,14 @@ public class Level_Manager : MonoBehaviour
             //increment current wave
             wave += 1;
 
+            //spawn next wave
             SpawnWave(level);
         }   
     }
 
     private void SpawnWave(int level)
-    {
+    {//level manager to spawn a wave pattern per level
+
         if (level == 1)
         {
             Level1();
@@ -76,42 +84,61 @@ public class Level_Manager : MonoBehaviour
 
     private void Level1()
     {
-        levelNumber.text = "1";
+        //set level number
+        if (levelNumber.text != "1")
+        {
+            levelNumber.text = "1";
+        }
 
+        //debug spawner
         if (wave == 1)
         {
-            Lane1.SpawnMob("knight");
-            Lane3.SpawnMob("knight");
-            Lane5.SpawnMob("knight");
+            Lane3.SpawnMob(mob_archer);
+        }
+        /*
+        //level wave spawn pattern
+        if (wave == 1)
+        {
+            Lane1.SpawnMob(mob_knight);
+            Lane3.SpawnMob(mob_knight);
+            Lane5.SpawnMob(mob_knight);
         }
         else if (wave == 2)
         {
-            Lane2.SpawnMob("knight");
-            Lane4.SpawnMob("knight");
+            Lane2.SpawnMob(mob_archer);
+            Lane4.SpawnMob(mob_archer);
         }
         else if (wave == 3)
         {
-            Lane1.SpawnMob("knight");
-            Lane3.SpawnMob("knight");
-            Lane5.SpawnMob("knight");
+            Lane1.SpawnMob(mob_knight);
+            Lane2.SpawnMob(mob_knight);
         }
         else if (wave == 4)
         {
-            Lane1.SpawnMob("knight");
-            Lane2.SpawnMob("knight");
+            Lane1.SpawnMob(mob_archer);
+            Lane2.SpawnMob(mob_archer);
         }
         else if (wave == 5)
         {
-            Lane4.SpawnMob("knight");
-            Lane5.SpawnMob("knight");
+            Lane3.SpawnMob(mob_knight);
+            Lane4.SpawnMob(mob_archer);
         }
         else if (wave == 6)
         {
-            Lane1.SpawnMob("knight");
-            Lane2.SpawnMob("knight");
-            Lane3.SpawnMob("knight");
-            Lane4.SpawnMob("knight");
-            Lane5.SpawnMob("knight");
+            Lane1.SpawnMob(mob_knight);
+            Lane2.SpawnMob(mob_knight);
+            Lane3.SpawnMob(mob_knight);
+            Lane4.SpawnMob(mob_knight);
+            Lane5.SpawnMob(mob_knight);
         }
+        else if (wave == 7)
+        {
+            Lane1.SpawnMob(mob_archer);
+            Lane2.SpawnMob(mob_archer);
+            Lane3.SpawnMob(mob_archer);
+            Lane4.SpawnMob(mob_archer);
+            Lane5.SpawnMob(mob_archer);
+        }
+        */
     }
 }

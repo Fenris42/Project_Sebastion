@@ -8,7 +8,6 @@ public class Spawner : MonoBehaviour
     //public variables
 
     //private variables
-    [SerializeField] private GameObject mob_knight;
 
 
 
@@ -24,19 +23,16 @@ public class Spawner : MonoBehaviour
 
     }
 
-    public void SpawnMob(string mob)
+    public void SpawnMob(GameObject mob)
     {//spawn a mob prefab into current spawners coordinates
 
         //spawn coordinates
         float xCoord = transform.position.x;
-        float yCoord = transform.position.y - 1.5f;
+        float yCoord = transform.position.y - 1f;
         quaternion zCoord = transform.rotation;
 
         //spawn mob
-        if (mob == "knight")
-        {
-            Instantiate(mob_knight, new Vector3(xCoord, yCoord), zCoord);
-        }
+        Instantiate(mob, new Vector3(xCoord, yCoord), zCoord);
 
     }
 
