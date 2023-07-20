@@ -90,13 +90,16 @@ public class Level_Manager : MonoBehaviour
             levelNumber.text = "1";
         }
 
+        
         //debug spawner
         if (wave == 1)
         {
             Lane3.SpawnMob(mob_archer);
         }
+        
+        
         /*
-        //level wave spawn pattern
+        //levels wave spawn pattern
         if (wave == 1)
         {
             Lane1.SpawnMob(mob_knight);
@@ -140,5 +143,6 @@ public class Level_Manager : MonoBehaviour
             Lane5.SpawnMob(mob_archer);
         }
         */
+        
     }
 }

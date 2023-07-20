@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3780246345317947401}
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8467742179252499462}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &938354054966444759
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300128, guid: 15b2d2faaecad4bfb9edc6585d94f509, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.16, y: 1.08}
   m_AdaptiveModeThreshold: 0.5
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 8467742179252499462}
   - component: {fileID: 1482952867982978430}
   - component: {fileID: 3056493398018148059}
-  - component: {fileID: 6013281241796856355}
+  - component: {fileID: 41950170577795018}
   m_Layer: 0
-  m_Name: Player_Arrow
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.12395239, y: 0.007911839}
+  m_Offset: {x: 0.0029838644, y: -0.12696117}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -189,9 +189,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0685692, y: 0.17189233}
+  m_Size: {x: 0.1759041, y: 1.0868043}
   m_EdgeRadius: 0
---- !u!114 &6013281241796856355
+--- !u!114 &41950170577795018
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,6 +200,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5733754461351891539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec7cc139af0bfb41976a1212e0b0631, type: 3}
+  m_Script: {fileID: 11500000, guid: ec41190dac4f11443aee68ee3277a2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ArrowSpeed: 0
+  ArrowDamage: 0
+  ArrowDirection: 0

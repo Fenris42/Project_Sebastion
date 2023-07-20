@@ -86,10 +86,6 @@ public class Mob_Attack : MonoBehaviour
             float delay = 0.5f;
             Invoke("SpawnArrow", delay);
 
-            //delay damage to sync with animation
-            delay = 1f;
-            Invoke("DamageWall", delay);
-
             //reset timer
             timer = 0;
         }
@@ -113,8 +109,10 @@ public class Mob_Attack : MonoBehaviour
         float yCoord = (float)(transform.position.y + 1f); //offset arrow to be towards hands
 
         //preset arrow stats
-        var arrow = arrowPrefab.GetComponent<Mob_Arrow>();
-        arrow.moveSpeed = arrowSpeed;
+        var arrow = arrowPrefab.GetComponent<Arrow>();
+        arrow.ArrowSpeed = arrowSpeed;
+        arrow.ArrowDamage = attackDamage;
+        arrow.ArrowDirection = -1;
 
         //spawn arrow
         Instantiate(arrowPrefab, new Vector3(xCoord, yCoord), transform.rotation);

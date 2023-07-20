@@ -2732,7 +2732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ceb25b4058b36a945ad254e08c6cbeed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 5733754461351891539, guid: a6491952dd21bb94693a9c2879bbf562, type: 3}
+  arrowPrefab: {fileID: 5733754461351891539, guid: bf412c2b3a643ef4d954d481919645d9, type: 3}
   animator: {fileID: 1810923458}
   arrowDamage: 5
   arrowSpeed: 30

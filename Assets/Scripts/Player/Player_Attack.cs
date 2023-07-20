@@ -52,9 +52,10 @@ public class Player_Attack : MonoBehaviour
         float xCoord = (float)(transform.position.x - 0.5); //offset arrow to be not centered on player
         float yCoord = (float)(transform.position.y + 1); //offset arrow to be towards hands
 
-        var arrow = arrowPrefab.GetComponent<Player_Arrow>();
-        arrow.MoveSpeed = arrowSpeed;
+        var arrow = arrowPrefab.GetComponent<Arrow>();
+        arrow.ArrowSpeed = arrowSpeed;
         arrow.ArrowDamage = arrowDamage;
+        arrow.ArrowDirection = 1;
 
         //spawn arrow
         Instantiate(arrowPrefab, new Vector3(xCoord, yCoord), transform.rotation);

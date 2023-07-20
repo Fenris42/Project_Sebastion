@@ -627,7 +627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7987989061968728373}
-  arrowPrefab: {fileID: 5733754461351891539, guid: 644a09d578d64704ba050a997ec6a5d6, type: 3}
+  arrowPrefab: {fileID: 5733754461351891539, guid: bf412c2b3a643ef4d954d481919645d9, type: 3}
   attackDamage: 5
   attackSpeed: 2
   arrowSpeed: 30
