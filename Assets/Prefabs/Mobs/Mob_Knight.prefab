@@ -330,6 +330,37 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &3474826336050473078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7582749335781868214}
+  m_Layer: 0
+  m_Name: Melee Attack Range
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7582749335781868214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3474826336050473078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.462, y: 0.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5464590901899299888}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3767217825132296758
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +553,7 @@ Transform:
   m_Children:
   - {fileID: 521064880071342208}
   - {fileID: 5861537016600907130}
+  - {fileID: 7582749335781868214}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -557,7 +589,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.10589552, y: 1.4031175}
+  m_Offset: {x: -0.047150522, y: 0.8979107}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -568,7 +600,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.78820896, y: 1.8365767}
+  m_Size: {x: 0.6080577, y: 1.8130786}
   m_EdgeRadius: 0
 --- !u!50 &5005617787766954606
 Rigidbody2D:
@@ -628,8 +660,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 460640687027003492}
   arrowPrefab: {fileID: 5733754461351891539, guid: 644a09d578d64704ba050a997ec6a5d6, type: 3}
+  meleeAttackRangeGO: {fileID: 7582749335781868214}
   attackDamage: 10
   attackSpeed: 2
+  arrowSpeed: 0
+  meleeAttackRange: 0.75
 --- !u!114 &267481997382998572
 MonoBehaviour:
   m_ObjectHideFlags: 0

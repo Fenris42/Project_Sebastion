@@ -13,11 +13,13 @@ public class Mob_Attack : MonoBehaviour
     private Mob_Movement mobMovement;
     private float timer = 0;
     private Mob_Health mobHealth;
+    [SerializeField] private Transform meleeAttackRangeGO;
 
     //stats
     [SerializeField] private int attackDamage;
     [SerializeField] private float attackSpeed;
     [SerializeField] private int arrowSpeed;
+    [SerializeField] private float meleeAttackRange;
 
 
 
@@ -60,9 +62,18 @@ public class Mob_Attack : MonoBehaviour
             //play animation
             animator.SetTrigger("Attack");
 
-            //delay damage to sync with animation
-            float delay = 0.5f;
-            Invoke("DamageWall", delay);
+            //Get targets in melee range
+            Collider2D[] targets = Physics2D.OverlapCircleAll(meleeAttackRangeGO.position, meleeAttackRange);
+
+            foreach(Collider2D target in targets)
+            {
+                if (target.tag == "Wall")
+                {
+                    //delay damage to sync with animation
+                    float delay = 0.5f;
+                    Invoke("DamageWall", delay);
+                }
+            }
 
             //reset timer
             timer = 0;
@@ -116,5 +127,11 @@ public class Mob_Attack : MonoBehaviour
 
         //spawn arrow
         Instantiate(arrowPrefab, new Vector3(xCoord, yCoord), transform.rotation);
+    }
+
+    private void OnDrawGizmosSelected()
+    {//draw spawn zone in inspector
+
+        Gizmos.DrawWireSphere(meleeAttackRangeGO.position, meleeAttackRange);
     }
 }

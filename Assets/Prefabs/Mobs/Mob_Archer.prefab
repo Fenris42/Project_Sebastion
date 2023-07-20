@@ -613,7 +613,7 @@ MonoBehaviour:
   isMelee: 0
   isRanged: 1
   animator: {fileID: 7987989061968728373}
-  moveSpeed: 1
+  moveSpeed: 1.5
 --- !u!114 &2685730872748773423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,9 +628,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7987989061968728373}
   arrowPrefab: {fileID: 5733754461351891539, guid: bf412c2b3a643ef4d954d481919645d9, type: 3}
+  meleeAttackRangeGO: {fileID: 0}
   attackDamage: 5
   attackSpeed: 2
   arrowSpeed: 30
+  meleeAttackRange: 0
 --- !u!114 &267481997382998572
 MonoBehaviour:
   m_ObjectHideFlags: 0

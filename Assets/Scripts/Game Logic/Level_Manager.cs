@@ -94,7 +94,8 @@ public class Level_Manager : MonoBehaviour
         //debug spawner
         if (wave == 1)
         {
-            Lane3.SpawnMob(mob_archer);
+            Lane2.SpawnMob(mob_archer);
+            Lane3.SpawnMob(mob_knight);
         }
         
         

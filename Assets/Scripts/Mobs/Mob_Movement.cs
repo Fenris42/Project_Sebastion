@@ -18,7 +18,7 @@ public class Mob_Movement : MonoBehaviour
     private Mob_Health mobHealth;
 
     //stats
-    [SerializeField] private int moveSpeed;
+    [SerializeField] private float moveSpeed;
     
 
 
