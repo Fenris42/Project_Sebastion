@@ -81,12 +81,12 @@ public class Mob_Movement : MonoBehaviour
             transform.position = transform.position + ((Vector3.left * moveSpeed) * Time.deltaTime);
 
             //play running animation
-            animator.SetBool("Running", true);
+            animator.SetBool("Run", true);
         }
         else
         {
             //return to idle animation
-            animator.SetBool("Running", false);
+            animator.SetBool("Run", false);
         }
     }
 

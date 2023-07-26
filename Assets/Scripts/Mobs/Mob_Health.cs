@@ -58,7 +58,7 @@ public class Mob_Health : MonoBehaviour
         if (currentHealth > 0)
         {
             //play hurt animation
-            animator.SetTrigger("Hurt");
+            //animator.SetTrigger("Hurt");
         }
         else if (currentHealth <= 0)
         {

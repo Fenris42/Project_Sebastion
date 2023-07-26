@@ -33,7 +33,7 @@ public class Player_Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.S))
         {
             //force idle animation
-            animator.SetBool("Running", false);
+            animator.SetBool("Run", false);
         }
         //move up
         else if (Input.GetKey(KeyCode.W))
@@ -41,7 +41,7 @@ public class Player_Movement : MonoBehaviour
             transform.position = transform.position + ((Vector3.up * moveSpeed) * Time.deltaTime);
 
             //play animation
-            animator.SetBool("Running", true);
+            animator.SetBool("Run", true);
         }
         //move down
         else if (Input.GetKey(KeyCode.S))
@@ -49,12 +49,12 @@ public class Player_Movement : MonoBehaviour
             transform.position = transform.position + ((Vector3.down * moveSpeed) * Time.deltaTime);
 
             //play animation
-            animator.SetBool("Running", true);
+            animator.SetBool("Run", true);
         }
         //return to idle
         else
         {
-            animator.SetBool("Running", false);
+            animator.SetBool("Run", false);
         }
     }
 }
