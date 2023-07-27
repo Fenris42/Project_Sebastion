@@ -1,3 +1,3 @@
 # Project Sebastion
  <br>
- A lane based defend the tower game
+ A lane based tower defense game
