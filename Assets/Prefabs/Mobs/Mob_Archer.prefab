@@ -499,8 +499,8 @@ GameObject:
   - component: {fileID: 1942413678221177768}
   - component: {fileID: 5005617787766954606}
   - component: {fileID: 3793093264070980892}
-  - component: {fileID: 2685730872748773423}
   - component: {fileID: 267481997382998572}
+  - component: {fileID: 73972610977708613}
   m_Layer: 7
   m_Name: Mob_Archer
   m_TagString: Mob
@@ -614,25 +614,6 @@ MonoBehaviour:
   isRanged: 1
   animator: {fileID: 7987989061968728373}
   moveSpeed: 1.5
---- !u!114 &2685730872748773423
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7647192234719378318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1b62f53c8c98d84884d97fdc0a4d784, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 7987989061968728373}
-  arrowPrefab: {fileID: 5733754461351891539, guid: bf412c2b3a643ef4d954d481919645d9, type: 3}
-  meleeAttackRangeGO: {fileID: 0}
-  attackDamage: 5
-  attackSpeed: 2
-  arrowSpeed: 30
-  meleeAttackRange: 0
 --- !u!114 &267481997382998572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,6 +633,24 @@ MonoBehaviour:
   despawnTime: 3
   currentHealth: 5
   maxHealth: 5
+  lootPrefab: {fileID: 8340604731268571535, guid: 3fe8457eedb8b2a4d89ce3e753549578, type: 3}
+--- !u!114 &73972610977708613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7647192234719378318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d4cd40e197a9e4abaaf4ea36ab7d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7987989061968728373}
+  arrowPrefab: {fileID: 5733754461351891539, guid: bf412c2b3a643ef4d954d481919645d9, type: 3}
+  attackDamage: 5
+  attackSpeed: 2
+  arrowSpeed: 30
 --- !u!1 &8555873171705665052
 GameObject:
   m_ObjectHideFlags: 0

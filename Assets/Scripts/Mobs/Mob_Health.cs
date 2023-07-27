@@ -18,9 +18,10 @@ public class Mob_Health : MonoBehaviour
     [SerializeField] private int despawnTime;
     [SerializeField] private int currentHealth;
     [SerializeField] private int maxHealth;
+    [SerializeField] GameObject lootPrefab;
 
 
-    
+
     void Start()
     {// Start is called before the first frame update
 
@@ -92,17 +93,19 @@ public class Mob_Health : MonoBehaviour
 
     private void DropLoot()
     {//spawn loot
-        /*
+        
         //set loot
+        var loot = lootPrefab.GetComponent<Loot>();
+        loot.quantity = 1;
 
         //spawn position
-        float xCoord = (float)(transform.position.x + 0);
-        float yCoord = (float)(transform.position.y + 0);
-        float zCoord = transform.rotation;
+        float xCoord = (float)(transform.position.x - 0.5f);
+        float yCoord = (float)(transform.position.y + 0.5f);
+        Quaternion zCoord = transform.rotation;
 
         //spawn loot
         Instantiate(lootPrefab, new Vector3(xCoord, yCoord), zCoord);
-        */
+        
     }
     private void DeleteMob()
     {//destroy mobs game object 

@@ -790,6 +790,7 @@ MonoBehaviour:
   despawnTime: 3
   currentHealth: 10
   maxHealth: 10
+  lootPrefab: {fileID: 8340604731268571535, guid: 83c20e75d0e7cdb44b3ca32b9ba554ae, type: 3}
 --- !u!1 &8555873171705665052
 GameObject:
   m_ObjectHideFlags: 0

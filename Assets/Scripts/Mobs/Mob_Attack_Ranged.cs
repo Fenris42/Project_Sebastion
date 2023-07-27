@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mob_Attack : MonoBehaviour
+public class Mob_Attack_Ranged : MonoBehaviour
 {
     //public variables
 
@@ -13,13 +13,11 @@ public class Mob_Attack : MonoBehaviour
     private Mob_Movement mobMovement;
     private float timer = 0;
     private Mob_Health mobHealth;
-    [SerializeField] private Transform meleeAttackRangeGO;
 
     //stats
     [SerializeField] private int attackDamage;
     [SerializeField] private float attackSpeed;
     [SerializeField] private int arrowSpeed;
-    [SerializeField] private float meleeAttackRange;
 
 
 
@@ -41,47 +39,8 @@ public class Mob_Attack : MonoBehaviour
     {
         if (mobMovement.inAttackRange == true && mobHealth.alive == true)
         {
-            if (mobMovement.isMelee == true)
-            {
-                //attack if in range
-                MeleeAttack();
-            }
-            else if (mobMovement.isRanged == true)
-            {
-                //attack if in range
-                RangedAttack();
-            }
-        }
-    }
-
-    private void MeleeAttack()
-    {
-        //convert ticks to seconds
-        if (timer >= attackSpeed)
-        {
-            //play animation
-            animator.SetTrigger("Attack");
-
-            //Get targets in melee range
-            Collider2D[] targets = Physics2D.OverlapCircleAll(meleeAttackRangeGO.position, meleeAttackRange);
-
-            foreach(Collider2D target in targets)
-            {
-                if (target.tag == "Wall")
-                {
-                    //delay damage to sync with animation
-                    float delay = 0.5f;
-                    Invoke("DamageWall", delay);
-                }
-            }
-
-            //reset timer
-            timer = 0;
-        }
-        else
-        {
-            //increment timer
-            timer += Time.deltaTime;
+            //attack if in range
+            RangedAttack();
         }
     }
 
@@ -127,11 +86,5 @@ public class Mob_Attack : MonoBehaviour
 
         //spawn arrow
         Instantiate(arrowPrefab, new Vector3(xCoord, yCoord), transform.rotation);
-    }
-
-    private void OnDrawGizmosSelected()
-    {//draw spawn zone in inspector
-
-        Gizmos.DrawWireSphere(meleeAttackRangeGO.position, meleeAttackRange);
     }
 }
