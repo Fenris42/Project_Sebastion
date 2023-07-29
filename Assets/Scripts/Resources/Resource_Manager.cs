@@ -10,8 +10,10 @@ public class Resource_Manager : MonoBehaviour
     //private variables
     [SerializeField] TMP_Text woodCounter;
     [SerializeField] TMP_Text stoneCounter;
+    [SerializeField] TMP_Text goldCounter;
     private int wood;
     private int stone;
+    private int gold;
 
 
     // Start is called before the first frame update
@@ -20,6 +22,7 @@ public class Resource_Manager : MonoBehaviour
         //initialize resources
         wood = 0;
         stone = 0;
+        gold = 0;
 
         //Refresh UI
         UpdateCounters();
@@ -42,6 +45,10 @@ public class Resource_Manager : MonoBehaviour
         {
             stone += quantity;
         }
+        else if (resource.ToLower() == "gold")
+        {
+            gold += quantity;
+        }
 
         UpdateCounters();
     }
@@ -57,6 +64,10 @@ public class Resource_Manager : MonoBehaviour
         {
             stone -= quantity;
         }
+        else if (resource.ToLower() == "gold")
+        {
+            gold -= quantity;
+        }
 
         UpdateCounters();
     }
@@ -65,5 +76,6 @@ public class Resource_Manager : MonoBehaviour
     {//refresh UI counters
         woodCounter.text = wood.ToString();
         stoneCounter.text = stone.ToString();
+        goldCounter.text = gold.ToString();
     }
 }
