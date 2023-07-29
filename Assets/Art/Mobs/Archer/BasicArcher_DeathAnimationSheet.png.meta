@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: 4febf32d69c81dc41a20a39e9392a335
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 497
+        width: 133
+        height: 154
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5235b8964b5bc4e9679618ed17d643
+      internalID: -855808842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_1
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 497
+        width: 125
+        height: 155
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7b2f72c0300854bacce69efdd745f4
+      internalID: -947052289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_2
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 497
+        width: 128
+        height: 155
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9bcc6462fa1a240b2ac8b68c295d38
+      internalID: -849742225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_3
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 497
+        width: 129
+        height: 162
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e6b233b4a09c14da01f338f487b525
+      internalID: 1456861591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 497
+        width: 144
+        height: 151
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ef120cc2e434c42a9ddc483fd17d92
+      internalID: 293632492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_6
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 281
+        width: 149
+        height: 144
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c9f333f8aba814ab155d4b81d1cd23
+      internalID: -500578925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_8
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 279
+        width: 162
+        height: 141
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a3b06f49e4bd241add739398332f5c
+      internalID: -1006158837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_9
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 276
+        width: 112
+        height: 158
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb2bc6ab1697b043ba549d11058a94e
+      internalID: -1673904569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_11
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 277
+        width: 132
+        height: 161
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c5602f9ce6cb38478dc7c40a5f028c6
+      internalID: 1178973247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 279
+        width: 146
+        height: 151
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc5cd0a63a3f55040820082f6b7a801c
+      internalID: -980333332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 94
+        width: 169
+        height: 129
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50a5202417ccebb42882b8df382daa7e
+      internalID: -39143607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_15
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 89
+        width: 160
+        height: 151
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d58e46156959e46b20d999dfc8033f
+      internalID: 1171961252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_17
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 89
+        width: 153
+        height: 134
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51300a86e3613d3448f53595beae372c
+      internalID: -1456908336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_19
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 79
+        width: 161
+        height: 95
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73f8de712dc48b40892c41fef52ebe7
+      internalID: 1542227361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BasicArcher_DeathAnimationSheet_20
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 79
+        width: 173
+        height: 63
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78f61bb137552e4583abef01ca25f46
+      internalID: -360340627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BasicArcher_DeathAnimationSheet_0: -855808842
+      BasicArcher_DeathAnimationSheet_1: -947052289
+      BasicArcher_DeathAnimationSheet_10: -130724098
+      BasicArcher_DeathAnimationSheet_11: 1178973247
+      BasicArcher_DeathAnimationSheet_12: -980333332
+      BasicArcher_DeathAnimationSheet_13: -39143607
+      BasicArcher_DeathAnimationSheet_14: 1090812032
+      BasicArcher_DeathAnimationSheet_15: 1171961252
+      BasicArcher_DeathAnimationSheet_16: 532908333
+      BasicArcher_DeathAnimationSheet_17: -1456908336
+      BasicArcher_DeathAnimationSheet_18: 385990280
+      BasicArcher_DeathAnimationSheet_19: 1542227361
+      BasicArcher_DeathAnimationSheet_2: -849742225
+      BasicArcher_DeathAnimationSheet_20: -360340627
+      BasicArcher_DeathAnimationSheet_3: 1456861591
+      BasicArcher_DeathAnimationSheet_4: 293632492
+      BasicArcher_DeathAnimationSheet_5: -311855292
+      BasicArcher_DeathAnimationSheet_6: -500578925
+      BasicArcher_DeathAnimationSheet_7: -255613791
+      BasicArcher_DeathAnimationSheet_8: -1006158837
+      BasicArcher_DeathAnimationSheet_9: -1673904569
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
