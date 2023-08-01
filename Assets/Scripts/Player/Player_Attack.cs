@@ -79,6 +79,10 @@ public class Player_Attack : MonoBehaviour
             Invoke("SpawnArrow", 0.5f);
             Invoke("ResetCharge", 0.6f);
         }
+        else
+        {
+            ResetCharge();
+        }
     }
 
     private void ResetCharge()
