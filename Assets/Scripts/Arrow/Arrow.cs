@@ -35,12 +35,12 @@ public class Arrow : MonoBehaviour
     private void Move()
     {//arrows flight pattern
 
-        //Left
+        //Left (Mob fired)
         if (ArrowDirection == -1) 
         {
             transform.position += (Vector3.left * ArrowSpeed) * Time.deltaTime;
         }
-        //right
+        //right (Player fired)
         else if (ArrowDirection == 1)
         {
             transform.position += (Vector3.right * ArrowSpeed) * Time.deltaTime;

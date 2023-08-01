@@ -75,15 +75,14 @@ public class Mob_Attack_Ranged : MonoBehaviour
     private void SpawnArrow()
     {
         //spawn on players position and offset slightly for visual effect
-        float xCoord = (float)(transform.position.x); //offset arrow to be not centered on mob
-        float yCoord = (float)(transform.position.y + 1f); //offset arrow to be towards hands
+        float xCoord = (float)(transform.position.x + 0f); //offset arrow to be not centered on mob
+        float yCoord = (float)(transform.position.y + 0.5f); //offset arrow to be towards hands
 
         //preset arrow stats
         var arrow = arrowPrefab.GetComponent<Arrow>();
         arrow.ArrowSpeed = arrowSpeed;
         arrow.ArrowDamage = attackDamage;
         arrow.ArrowDirection = -1;
-        arrow.ArrowCharge = 100; //full power
 
         //spawn arrow
         Instantiate(arrowPrefab, new Vector3(xCoord, yCoord), transform.rotation);

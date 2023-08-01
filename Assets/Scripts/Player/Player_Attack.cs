@@ -12,6 +12,7 @@ public class Player_Attack : MonoBehaviour
     [SerializeField] GameObject chargeBarObject;
     private Stat_Bar chargeBar;
     private float drawStrength;
+    private bool chargeOnCooldDown;
 
     //stats
     [SerializeField] private int arrowDamage;
@@ -52,24 +53,30 @@ public class Player_Attack : MonoBehaviour
     private void ChargeShot()
     {//charge bows strength
 
-        //unhide charge bar
-        chargeBarObject.SetActive(true);
+        //only allow charging if now on cooldown
+        if (chargeOnCooldDown == false)
+        {
+            //unhide charge bar
+            chargeBarObject.SetActive(true);
 
-        if(drawStrength <= 100)
-        {//increase bows charge level
-            drawStrength += (float)drawSpeed * Time.deltaTime;
+            if (drawStrength <= 100)
+            {//increase bows charge level
+                drawStrength += (float)drawSpeed * Time.deltaTime;
+            }
+
+            //update charge bars fill
+            chargeBar.SetFill((int)drawStrength);
         }
-        
-        //update charge bars fill
-        chargeBar.SetFill((int)drawStrength);
-
-        
         
     }
 
     private void ArrowAttack()
     {//fire arrow
 
+        //temp disable charging while attack in progress
+        chargeOnCooldDown = true;
+
+        //fire arrow only if over min threshold 
         if (drawStrength >= 25)
         {
             //play animation
@@ -88,6 +95,7 @@ public class Player_Attack : MonoBehaviour
     private void ResetCharge()
     {
         //reset draw
+        chargeOnCooldDown = false;
         drawStrength = 0;
         chargeBar.SetCurrent((int)drawStrength);
 
