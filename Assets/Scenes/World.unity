@@ -4898,6 +4898,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1100169091297377929, guid: ee9e501d8ea457f4da641e9b9c70337a, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1408656741053144931, guid: ee9e501d8ea457f4da641e9b9c70337a, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4972,7 +4976,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4586432261552008691, guid: ee9e501d8ea457f4da641e9b9c70337a, type: 3}
       propertyPath: drawSpeed
-      value: 75
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 4586432261552008691, guid: ee9e501d8ea457f4da641e9b9c70337a, type: 3}
+      propertyPath: arrowSpeed
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4586432261552008691, guid: ee9e501d8ea457f4da641e9b9c70337a, type: 3}
       propertyPath: chargeBarObject

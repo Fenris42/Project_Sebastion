@@ -206,3 +206,4 @@ MonoBehaviour:
   ArrowSpeed: 0
   ArrowDamage: 0
   ArrowDirection: 0
+  ArrowCharge: 0

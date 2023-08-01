@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Arrow : MonoBehaviour
@@ -8,8 +9,6 @@ public class Arrow : MonoBehaviour
     //public variables
 
     //private variables
-    private float leftBound = -8;
-    private float rightBound = 8;
 
     //stats
     public int ArrowSpeed;
@@ -44,6 +43,7 @@ public class Arrow : MonoBehaviour
         else if (ArrowDirection == 1)
         {
             transform.position += (Vector3.right * ArrowSpeed) * Time.deltaTime;
+            
         }
         
 
