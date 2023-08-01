@@ -83,6 +83,7 @@ public class Mob_Attack_Ranged : MonoBehaviour
         arrow.ArrowSpeed = arrowSpeed;
         arrow.ArrowDamage = attackDamage;
         arrow.ArrowDirection = -1;
+        arrow.ArrowCharge = 100; //full power
 
         //spawn arrow
         Instantiate(arrowPrefab, new Vector3(xCoord, yCoord), transform.rotation);

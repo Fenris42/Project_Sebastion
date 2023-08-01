@@ -11,8 +11,8 @@ public class Stat_Bar : MonoBehaviour
     //private variables
     [SerializeField] private Slider fillSlider;
     [SerializeField] private Slider changeSlider;
-    private int current;
-    private int max;
+    [SerializeField] private int current;
+    [SerializeField] private int max;
 
 
 
@@ -102,6 +102,18 @@ public class Stat_Bar : MonoBehaviour
 
         //delay updating the secondary bar for 1 sec
         Invoke("UpdateChangeBar", 1);
+    }
+    
+    public void SetFill(int amount)
+    {
+        //set current fill bar ammount
+        current = amount;
+
+        //keep values in range
+        Sanitize();
+
+        //apply updates to main bar
+        UpdateFillBar();
     }
 
 }

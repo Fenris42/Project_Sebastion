@@ -9,16 +9,23 @@ public class Player_Attack : MonoBehaviour
     //private variables
     [SerializeField] GameObject arrowPrefab;
     [SerializeField] Animator animator;
+    [SerializeField] GameObject chargeBarObject;
+    private Stat_Bar chargeBar;
+    private float drawStrength;
 
     //stats
     [SerializeField] private int arrowDamage;
     [SerializeField] private int arrowSpeed;
+    [SerializeField] private float drawSpeed;
 
 
     // Start is called before the first frame update
     void Start()
-    {
-
+    { 
+        //initialize charge bar
+        chargeBar = chargeBarObject.GetComponent<Stat_Bar>();
+        chargeBar.SetCurrent(0);
+        chargeBar.SetMax(100);
     }
 
     // Update is called once per frame
@@ -29,21 +36,59 @@ public class Player_Attack : MonoBehaviour
 
     private void PlayerInput()
     {
-        if (Input.GetMouseButtonDown(1))
-        {//right mouse button pressed. fire arrow
+        //if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButton(1))
+        {//right mouse button held. charge arrow shot
+
+            ChargeShot();
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {//right mouse button released. fire arrow
 
             ArrowAttack();
         }
     }
 
-    private void ArrowAttack()
-    {
-        //play animation
-        animator.SetTrigger("Attack");
+    private void ChargeShot()
+    {//charge bows strength
 
-        //spawn arrow in sync with animation
-        float delay = 0.5f;
-        Invoke("SpawnArrow", delay);
+        //unhide charge bar
+        chargeBarObject.SetActive(true);
+
+        if(drawStrength <= 100)
+        {//increase bows charge level
+            drawStrength += (float)drawSpeed * Time.deltaTime;
+        }
+        
+        //update charge bars fill
+        chargeBar.SetFill((int)drawStrength);
+
+        
+        
+    }
+
+    private void ArrowAttack()
+    {//fire arrow
+
+        if (drawStrength >= 25)
+        {
+            //play animation
+            animator.SetTrigger("Attack");
+
+            //spawn arrow in sync with animation
+            Invoke("SpawnArrow", 0.5f);
+            Invoke("ResetCharge", 0.6f);
+        }
+    }
+
+    private void ResetCharge()
+    {
+        //reset draw
+        drawStrength = 0;
+        chargeBar.SetCurrent((int)drawStrength);
+
+        //hide charge bar
+        chargeBarObject.SetActive(false);
     }
 
     private void SpawnArrow()
@@ -56,6 +101,7 @@ public class Player_Attack : MonoBehaviour
         arrow.ArrowSpeed = arrowSpeed;
         arrow.ArrowDamage = arrowDamage;
         arrow.ArrowDirection = 1;
+        arrow.ArrowCharge = (int)drawStrength;
 
         //spawn arrow
         Instantiate(arrowPrefab, new Vector3(xCoord, yCoord), transform.rotation);

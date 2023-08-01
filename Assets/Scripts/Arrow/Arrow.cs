@@ -8,11 +8,14 @@ public class Arrow : MonoBehaviour
     //public variables
 
     //private variables
+    private float leftBound = -8;
+    private float rightBound = 8;
 
     //stats
     public int ArrowSpeed;
     public int ArrowDamage;
     public int ArrowDirection; //Left = -1, Right = 1
+    public int ArrowCharge;
 
 
     // Start is called before the first frame update
