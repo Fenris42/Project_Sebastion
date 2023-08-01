@@ -105,15 +105,15 @@ public class Player_Attack : MonoBehaviour
 
     private void SpawnArrow()
     {
+
         //spawn on players position and offset slightly for visual effect
         float xCoord = (float)(transform.position.x - 0.5); //offset arrow to be not centered on player
         float yCoord = (float)(transform.position.y + 1); //offset arrow to be towards hands
 
         var arrow = arrowPrefab.GetComponent<Arrow>();
         arrow.ArrowSpeed = arrowSpeed;
-        arrow.ArrowDamage = arrowDamage;
+        arrow.ArrowDamage = arrowDamage * (drawStrength / 100); //reduce max damage based on % of charge bar filled
         arrow.ArrowDirection = 1;
-        arrow.ArrowCharge = (int)drawStrength;
 
         //spawn arrow
         Instantiate(arrowPrefab, new Vector3(xCoord, yCoord), transform.rotation);

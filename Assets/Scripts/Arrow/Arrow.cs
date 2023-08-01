@@ -12,9 +12,8 @@ public class Arrow : MonoBehaviour
 
     //stats
     public int ArrowSpeed;
-    public int ArrowDamage;
+    public float ArrowDamage;
     public int ArrowDirection; //Left = -1, Right = 1
-    public int ArrowCharge;
 
 
     // Start is called before the first frame update
@@ -82,7 +81,7 @@ public class Arrow : MonoBehaviour
                 Mob_Health mob = collision.GetComponent<Mob_Health>();
 
                 //apply damage
-                mob.Damage(ArrowDamage);
+                mob.Damage((int)ArrowDamage);
 
                 //delete arrow
                 Destroy(gameObject);
@@ -99,7 +98,7 @@ public class Arrow : MonoBehaviour
                 Wall_Health wall = GameObject.Find("Game Logic").GetComponent<Wall_Health>();
 
                 //apply damage
-                wall.Damage(ArrowDamage);
+                wall.Damage((int)ArrowDamage);
 
                 //delete arrow
                 Destroy(gameObject);
