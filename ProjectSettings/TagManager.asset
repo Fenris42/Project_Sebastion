@@ -46,12 +46,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
-    uniqueID: 4122646275
+  - name: Background
+    uniqueID: 1881966369
     locked: 0
   - name: Mobs
     uniqueID: 123665767
     locked: 0
-  - name: FG
+  - name: Foreground
     uniqueID: 1723143739
+    locked: 0
+  - name: Player
+    uniqueID: 4122646275
+    locked: 0
+  - name: UI
+    uniqueID: 787828365
     locked: 0
