@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
 
         //spawn coordinates
         float xCoord = transform.position.x;
-        float yCoord = transform.position.y - 1f;
+        float yCoord = transform.position.y - 0.5f;
         quaternion zCoord = transform.rotation;
 
         //spawn mob

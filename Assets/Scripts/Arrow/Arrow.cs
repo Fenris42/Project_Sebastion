@@ -61,6 +61,30 @@ public class Arrow : MonoBehaviour
 
     }
 
+    private void DamageMob(GameObject mob, float damage)
+    {
+        //get mobs health scrib
+        Mob_Health mobHealth = mob.GetComponentInParent<Mob_Health>();
+
+        //apply damage
+        mobHealth.Damage((int)damage);
+
+        //delete arrow
+        Destroy(gameObject);
+    }
+
+    private void DamageWall(float damage)
+    {
+        //get mobs health scrib
+        Wall_Health wallHealth = GameObject.Find("Game Logic").GetComponent<Wall_Health>();
+
+        //apply damage
+        wallHealth.Damage((int)damage);
+
+        //delete arrow
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {//Collision handling
 
@@ -74,19 +98,17 @@ public class Arrow : MonoBehaviour
         //arrow fired by player
         if (ArrowDirection == 1)
         {
-            if (collision.tag == "Mob")
-            {//arrow hit a mob. apply damage
+            if (collision.tag == "Mob Head")
+            {//x2 damage for head shot
 
-                //get mobs health scrib
-                Mob_Health mob = collision.GetComponent<Mob_Health>();
-
-                //apply damage
-                mob.Damage((int)ArrowDamage);
-
-                //delete arrow
-                Destroy(gameObject);
-
+                DamageMob(collision.gameObject, ArrowDamage * 2);
             }
+            else if (collision.tag == "Mob Body")
+            {//normal damage for body shot
+
+                DamageMob(collision.gameObject, ArrowDamage);
+            }
+
         }
         //arrow fired by mob
         else if (ArrowDirection == -1)
@@ -94,14 +116,7 @@ public class Arrow : MonoBehaviour
             if (collision.tag == "Wall")
             {//arrow hit the wall. apply damage
 
-                //get mobs health scrib
-                Wall_Health wall = GameObject.Find("Game Logic").GetComponent<Wall_Health>();
-
-                //apply damage
-                wall.Damage((int)ArrowDamage);
-
-                //delete arrow
-                Destroy(gameObject);
+                DamageWall(ArrowDamage);
 
             }
         }

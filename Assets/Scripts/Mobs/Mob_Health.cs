@@ -9,7 +9,8 @@ public class Mob_Health : MonoBehaviour
 
     //private variables
     [SerializeField] private Animator animator;
-    [SerializeField] private Collider2D boxCollider;
+    [SerializeField] private BoxCollider2D headHitbox;
+    [SerializeField] private BoxCollider2D bodyHitbox;
     [SerializeField] private GameObject healthBarObject;
     private Stat_Bar healthBar;
     private Mob_Movement mobMovement;
@@ -81,7 +82,8 @@ public class Mob_Health : MonoBehaviour
         healthBarObject.SetActive(false);
 
         //disable mobs hit box
-        boxCollider.enabled = false;
+        headHitbox.enabled = false;
+        bodyHitbox.enabled = false;
 
         //Spawn loot item
         DropLoot();
