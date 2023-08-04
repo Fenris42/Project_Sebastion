@@ -49,6 +49,9 @@ TagManager:
   - name: Background
     uniqueID: 1881966369
     locked: 0
+  - name: Loot
+    uniqueID: 4038159955
+    locked: 0
   - name: Mobs
     uniqueID: 123665767
     locked: 0
